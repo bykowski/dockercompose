@@ -1,0 +1,12 @@
+version: '3'
+services:
+  api:
+    build: ./springbootapi
+    ports:
+      - "8080:8080"
+  client:
+    build: ./springboot-apiclient
+    ports:
+    - "9090:9090"
+    depends_on:
+      - api
